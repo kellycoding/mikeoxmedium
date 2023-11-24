@@ -5,7 +5,8 @@
     let x = 0;
     function updateTime() {
         x++;
-        document.getElementById("stopwatch").innerhtml = x;
+        document.getElementById("stopwatch").innerHTML = x;
+        setTimeout(updateTime, 1000)
     }
 </script>
 </head>
