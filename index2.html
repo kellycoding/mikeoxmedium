@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I love the sunshine!</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='image.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css')}}" />
+    <script>
+        function updateText (input,output) {
+            var text = document.getElementById(input).value
+            if (text != "") {
+                document.getElementById(output).innerHTML = text
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>I love the sunshine so much</p>
+    <ul>
+        <input type="text" id="textChange">
+        <p id="normal" onclick="updateText('textChange','normal')">This is the basic text</p>
+    </ul>
+    <input type="text" id="textChangeno2">
+    <p id="othernormal" onclick="updateText('textChangeno2','othernormal')">This is other basic text</p>
+</body>
+</html>
