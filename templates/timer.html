@@ -5,13 +5,13 @@
     let x = 0;
     function updateTime() {
         x++;
-        document.getElementById("stopwatch").innerHTML = x;
-        setTimeout(updateTime, 1000)
+        document.getElementById("stopwatch").innerHTML = (x/10);
+        setTimeout(updateTime, 100)
     }
 </script>
 </head>
 <body>
-    <h1 id="stopwatch">0</h1>
+    <h1 id="stopwatch">0.0</h1>
     <button id="startbutton" onclick="updateTime()">Start</button>
 </body>
 </html>
