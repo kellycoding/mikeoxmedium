@@ -9,14 +9,45 @@
     <title>Website</title>
     <link rel="icon" type="image" href="https://1drv.ms/i/s!Ajp_Twx_jpGapgFTA4pKdEfPhW0Q?e=undyDg">
     <link rel="stylesheet" href="index.css">
-<script>
-    let x = 0;
-    function updateTime() {
-        x++;
-        document.getElementById("stopwatch").innerHTML = (x/10);
-        setTimeout(updateTime, 100)
-    }
-</script>
+    <script>
+        let x = 0;
+        let sec = 0;
+        let min = 0;
+        let hour = 0;
+        let isStarted = false;
+        function startStopClicked() {
+            if (isStarted == false) {
+                isStarted = true;
+                document.getElementById("startbutton").innerHTML = "Stop";
+            } else {
+                isStarted = false;
+                document.getElementById("startbutton").innerHTML = "Start";
+            }
+            updateTime()
+        }
+        function updateTime() {
+            x++;
+            document.getElementById("stopwatch").innerHTML = (x/10);
+            setTimeout(updateTime, 100)
+            if (isStarted == false) {
+                return;
+            }
+            sec++;
+            if (sec == 60) {
+                min++;
+                document.getElementById("minutes").innerHTML = min;
+                sec = 0;
+                if (min == 60) {
+                    hour++;
+                    document.getElementById("hours").innerHTML = hour;
+                    min = 0;
+                    document.getElementById("minutes").innerHTML = min;
+                }
+            }
+            document.getElementById("seconds").innerHTML = sec;
+            setTimeout(updateTime, 950)
+        }
+    </script>
 </head>
 <body>
     <div class="dropdown">
