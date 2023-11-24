@@ -93,3 +93,15 @@ background-color: #3b2fbe;
     padding: 5px;
     font-size: 24px;
 }
+
+
+#restarted {
+    width: 200px;
+    margin-top: 50px;
+    transition: margin-top 0.3s;
+
+}
+#restarted:hover {
+    width: 200px;
+    margin-top: 0px;
+}
