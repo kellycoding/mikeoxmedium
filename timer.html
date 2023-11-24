@@ -13,8 +13,8 @@
     let x = 0;
     function updateTime() {
         x++;
-        document.getElementById("stopwatch").innerHTML = x;
-        setTimeout(updateTime, 1000)
+        document.getElementById("stopwatch").innerHTML = (x/10);
+        setTimeout(updateTime, 100)
     }
 </script>
 </head>
