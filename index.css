@@ -1,0 +1,95 @@
+h1 {
+    color:rgb(13, 4, 186);
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 30px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+br {
+    line-height: 50px;
+}
+
+#smallerbreak {
+    line-height: 30px;
+}
+
+#bluebox {
+    height: 100x;
+    width: 50px;
+    background-color: brown;    
+    text-align: center;
+}
+
+.bluebutton {
+    height: 30px;
+    width: 150px;
+    background-color: aquamarine;
+}
+
+#container {
+    text-align: center;
+}
+
+.page li {
+
+    float: left;
+}
+.dropdown {
+    position:fixed;
+}
+
+.menu-items {
+    display: none;
+    position: absolute;
+    background-color: #4B3Fd6;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  .dropdown:hover .menu-items {
+    display: block;
+  }
+.page a {
+    background-color: #4B3FD6;
+    display: block;
+    padding: 14px;
+    font-size: large;
+    list-style-type:none;
+    text-decoration: none;
+    color: rgb(222, 212, 236);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page li :hover{
+background-color: #3b2fbe;
+}
+.nav{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    width: 100%;
+    top: 0;
+    left:0;
+}
+.active {
+    background-color: #3b2fbe;
+}
+
+#startbutton {
+    width: 100px;
+    border-style: solid;
+    background-color: aqua;
+    border-radius: 5%;
+    border-width: 5px;
+    margin-left: 47%;
+    padding: 5px;
+    font-size: 24px;
+}
