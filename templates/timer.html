@@ -6,6 +6,16 @@
     let min = 0;
     let hour = 0;
     let isStarted = false;
+    function resetClicked() {
+        isStarted = true;
+        sec = 0;
+        min = 0;
+        hour = 0;
+        document.getElementById("seconds").innerHTML = 0
+        document.getElementById("minutes").innerHTML = 0
+        document.getElementById("hours").innerHTML = 0
+        startStopClicked();
+    }
     function startStopClicked() {
         if (isStarted == false) {
             isStarted = true;
@@ -39,8 +49,6 @@
 <link rel="stylesheet" href="timerindex.css">
 </head>
 <body>
-
-
     <h3 class="inline">H: </h3>
     <h1 class="inline" id="hours">0</h1>
     <h3 class="inline">&emsp; M: </h3>
@@ -49,5 +57,6 @@
     <h1 class="inline" id="seconds">0</h1>
     <br><br>
     <button id="startbutton" onclick="startStopClicked()">Start</button>
+    <button id="resetbutton" onclick="resetClicked()">Reset</button>
 </body>
 </html>
