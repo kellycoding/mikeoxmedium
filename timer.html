@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
-    <link rel="icon" type="image" href="https://1drv.ms/i/s!Ajp_Twx_jpGapgFTA4pKdEfPhW0Q?e=undyDg">
-    <link rel="stylesheet" href="index.css">
-    <script>
-        let x = 0;
-        let sec = 0;
-        let min = 0;
-        let hour = 0;
-        let isStarted = false;
-        function startStopClicked() {
-            if (isStarted == false) {
-                isStarted = true;
-                document.getElementById("startbutton").innerHTML = "Stop";
-            } else {
-                isStarted = false;
-                document.getElementById("startbutton").innerHTML = "Start";
-            }
-            updateTime()
+<script>
+    let sec = 0;
+    let min = 0;
+    let hour = 0;
+    let isStarted = false;
+    function restartTimer() {
+        sec = 0;
+        min = 0;
+        hour = 0;
+        document.getElementById("minutes").innerHTML = min;
+        document.getElementById("hours").innerHTML = hour;
+        document.getElementById("seconds").innerHTML = (sec/10);
+        isStarted = false;
+        document.getElementById("startbutton").innerHTML = "Start";
+    }
+    function startStopClicked() {
+        if (isStarted == false) {
+            isStarted = true;
+            document.getElementById("startbutton").innerHTML = "Stop";
+        } else {
+            isStarted = false;
+            document.getElementById("startbutton").innerHTML = "Start";
         }
-        function updateTime() {
-            x++;
-            document.getElementById("stopwatch").innerHTML = (x/10);
-            setTimeout(updateTime, 100)
-            if (isStarted == false) {
-                return;
-            }
-            sec++;
-            if (sec == 60) {
-                min++;
+        updateTime()
+    }
+    function updateTime() {
+        if (isStarted == false) {
+            return;
+        }
+        sec++;
+        if (sec == 600) {
+            min++;
+            document.getElementById("minutes").innerHTML = min;
+            sec = 0;
+            if (min == 60) {
+                hour++;
+                document.getElementById("hours").innerHTML = hour;
+                min = 0;
                 document.getElementById("minutes").innerHTML = min;
-                sec = 0;
-                if (min == 60) {
-                    hour++;
-                    document.getElementById("hours").innerHTML = hour;
-                    min = 0;
-                    document.getElementById("minutes").innerHTML = min;
-                }
             }
-            document.getElementById("seconds").innerHTML = sec;
-            setTimeout(updateTime, 950)
         }
-    </script>
+        document.getElementById("seconds").innerHTML = (sec/10);
+        setTimeout(updateTime, 100)
+    }
+</script>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="dropdown">
-        <h1>Menu</h1>
-        <div class="menu-items">
-       <ul class="nav">
-        <li class="page"><a class="page" href="index.html">Home</a></li>
-        <li class="page"><a class="page" href="timer.html">Racing</a></li>
-        <li class="page"><a class="page" href="#">About Us</a></li>
-       </ul>
-        </div>
-    </div>
-
-    <h1 id="stopwatch" style="text-align: center;">0</h1>
-    <button id="startbutton" onclick="updateTime()">Start</button>
+    <p class="inline" style="text-align: center;">Hour:</p>
+    <h1 class="inline" id="hours">0</h1>
+    <p class="inline">   </p>
+    <p class="inline" style="text-align: center;">Minute:</p>
+    <h1 class="inline" id="minutes">0</h1>
+    <p class="inline">   </p>
+    <p class="inline" style="text-align: center;">Second:</p>
+    <h1 class="inline" id="seconds">0</h1>
+    <button id="startbutton" onclick="startStopClicked()">Start</button>
+    <button id="startbutton" onclick="restartTimer()">Restart</button>
+    <br>
+    <img src="dog.png" style="width:200px; margin-left: 30%">
+    <h2>Work until your bank account looks like a phone number.</h2>
 </body>
 </html>
